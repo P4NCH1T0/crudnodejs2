@@ -16,7 +16,17 @@ function Empleados() {
             }
         }
         fetchAllEmpleados()
-    },[])
+    },[]);
+
+    const handleDelete = async (id) =>{
+        try{
+            await axios.delete("http://localhost:9900/empleado/" + id)
+            window.location.reload()
+        }catch (err){
+            console.log(err)
+
+        }
+    }
 
     return (
     <div>
@@ -28,6 +38,8 @@ function Empleados() {
                 <h3>{empleado.job}</h3>
                 <h3>{empleado.shift}</h3>
                 <h3>{empleado.experience}</h3>
+                <button className='delete' onClick={()=> handleDelete(empleado.id)}>Eliminar</button>
+                <button className='edit'><Link to={`/update/${empleado.id}`}>Editar</Link></button>
             </div>
         ))}
       </div>

@@ -34,7 +34,7 @@ app.get("/empleado",(req,res)=>{
 // Crear empleado
 
 app.post("/empleado",(req,res)=>{
-    const q = "INSERT INTO empleado (`nombre`,`job`,`shift`,`experience`) VALUES (?)"
+    const q = "INSERT INTO empleado (`nombre`,`job`,`shift`,`experience`) VALUES (?)";
     const values =[
         req.body.nombre,
         req.body.job,

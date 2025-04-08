@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Empleados from './pages/Empleados';
@@ -13,7 +13,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Empleados/>}/>
           <Route path='/add' element={<Add/>}/>
-          <Route path='/update' element={<Update/>}/>
+          <Route path='/update/:id' element={<Update/>}/>
         </Routes>
       </BrowserRouter>
     </div>

@@ -36,10 +36,10 @@ app.get("/empleado",(req,res)=>{
 app.post("/empleado",(req,res)=>{
     const q = "INSERT INTO empleado (`nombre`,`job`,`shift`,`experience`) VALUES (?)"
     const values =[
-        "Leo",
-        "3D Modeler",
-        "Matutino",
-        "2"
+        req.body.nombre,
+        req.body.job,
+        req.body.shift,
+        req.body.experience,
     ];
 
     db.query(q,[values], (err,data)=>{
